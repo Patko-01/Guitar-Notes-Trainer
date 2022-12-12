@@ -1,17 +1,16 @@
 const beep = new Audio('beep.webm');
 
 const pole_noty = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];
+const pole_noty_natural = ["A","B","C","D","E","F","G"];
 
 let ake_noty = true;
 
 function vsetky()
 {
-    const pole_noty = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];
     ake_noty = true;
 }
 function natural()
-{
-    const pole_noty = ["A","B","C","D","E","F","G"];
+{   
     ake_noty = false;
 }
 
@@ -38,10 +37,11 @@ function casovac()
         if(ake_noty)
             document.getElementById("nota").innerHTML = pole_noty[Math.floor(Math.random() * 12)];
         else 
-            document.getElementById("nota").innerHTML = pole_noty[Math.floor(Math.random() * 7)];
+            document.getElementById("nota").innerHTML = pole_noty_natural[Math.floor(Math.random() * 7)];
     }
         
     cas=cas-1;
+
     if(cas<0)
         cas=10;
 }
