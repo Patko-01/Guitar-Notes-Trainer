@@ -14,7 +14,8 @@ function natural()
     ake_noty = false;
 }
 
-let cas = 10;
+let cas = document.getElementById("Range").value;
+let cas_range = document.getElementById("Range").value;
 
 function casovac()
 {
@@ -28,11 +29,12 @@ function casovac()
         document.getElementById("casovac").innerHTML = "Time out!";
         beep.currentTime = 0;
         beep.play();
+        cas_range = document.getElementById("Range").value;
     }
     else
         document.getElementById("casovac").innerHTML = cas;
 
-    if(cas>9)
+    if(cas>cas_range-1)
     {
         if(ake_noty)
             document.getElementById("nota").innerHTML = pole_noty[Math.floor(Math.random() * 12)];
@@ -43,7 +45,7 @@ function casovac()
     cas=cas-1;
 
     if(cas<0)
-        cas=10;
+        cas=cas_range;
 }
 
 let fun = true;
